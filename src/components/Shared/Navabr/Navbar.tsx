@@ -12,6 +12,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { AiOutlineMessage } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 import { AllImages } from "@/assets/AllImages";
+import NotificationModal from "@/components/Modals/NotificationModal";
 
 interface MenuItem {
   key: string;
@@ -28,6 +29,7 @@ const NavBar: React.FC = () => {
   const [drawerVisible, setDrawerVisible] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isLogin, setIsLogin] = useState<boolean>(false);
+  console.log("isLogin", isLogin);
   const router = useRouter();
 
   useEffect(() => {
@@ -111,31 +113,47 @@ const NavBar: React.FC = () => {
           ))}
         </div>
         <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/favourites">
-              <CiHeart className="h-5 w-5 cursor-pointer" />
-            </Link>
-            <IoIosNotificationsOutline
-              onClick={showModalForNotification}
-              className="cursor-pointer h-5 w-5"
-            />
-            <Link href="/message">
-              <AiOutlineMessage className="h-5 w-5" />
-            </Link>
-            <Link href="/user-profile-page">
-              <Image
-                src={AllImages.logo}
-                alt="user"
-                height={40}
-                width={40}
-                className="h-10 w-10 rounded-full"
+          {isLogin ? (
+            <div className="flex items-center space-x-4">
+              <Link href="/favourites">
+                <CiHeart className="h-5 w-5 cursor-pointer" />
+              </Link>
+              <IoIosNotificationsOutline
+                onClick={showModalForNotification}
+                className="cursor-pointer h-5 w-5"
               />
-            </Link>
-            {!isLogin && (
-              <button onClick={handleLogout} className="">
+              <Link href="/message">
+                <AiOutlineMessage className="h-5 w-5" />
+              </Link>
+              <Link href="/user-profile-page">
+                <Image
+                  src={AllImages.logo}
+                  alt="user"
+                  height={40}
+                  width={40}
+                  className="h-10 w-10 rounded-full"
+                />
+              </Link>
+              <button onClick={handleLogout} className="text-red-500">
                 Logout
               </button>
-            )}
-          </div>
+            </div>
+          ) : (
+            <>
+              <button
+                onClick={handleLogin}
+                className="bg-primary text-white px-10 py-3 rounded-md shadow-lg"
+              >
+                Log In
+              </button>
+              <Link href="/sign-up">
+                <button className="border border-primary text-primary px-10 py-3 rounded-md shadow-lg">
+                  Sign Up
+                </button>
+              </Link>
+            </>
+          )}
+        </div>
         <div className="lg:hidden">
           <Button
             icon={<RxHamburgerMenu className="text-black text-2xl" />}
@@ -161,9 +179,30 @@ const NavBar: React.FC = () => {
             </Link>
           ))}
           {isLogin ? (
-            <button onClick={handleLogout} className="text-red-500">
-              Logout
-            </button>
+          <div className="flex flex-col justify-center items-center  gap-2">
+          <Link href="/favourites">
+            <CiHeart className="h-5 w-5 cursor-pointer" />
+          </Link>
+          <IoIosNotificationsOutline
+            onClick={showModalForNotification}
+            className="cursor-pointer h-5 w-5"
+          />
+          <Link href="/message">
+            <AiOutlineMessage className="h-5 w-5" />
+          </Link>
+          <Link href="/user-profile-page">
+            <Image
+              src={AllImages.logo}
+              alt="user"
+              height={40}
+              width={40}
+              className="h-10 w-10 rounded-full"
+            />
+          </Link>
+          <button onClick={handleLogout} className=" font-bold">
+            Logout
+          </button>
+        </div>
           ) : (
             <>
               <button
@@ -185,9 +224,13 @@ const NavBar: React.FC = () => {
       <Modal
         open={isModalOpenForNotification}
         onOk={handleOkForNotification}
-        onCancel={handleCancelForNotification}
+        onCancel={handleCancelForNotification} 
+        footer={null}
       >
-        {/* <NotificationModal /> */}
+        <NotificationModal
+          // handleCancel={handleCancelForNotification}
+          // handleOk={handleOkForNotification}
+        />
       </Modal>
     </nav>
   );
