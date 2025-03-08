@@ -8,6 +8,7 @@ import { Pagination } from "swiper/modules";
 import { AllImages } from "@/assets/AllImages";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const UniquePrice = () => {
   const data = [
@@ -127,6 +128,11 @@ const UniquePrice = () => {
                 <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
                   Price: {item.price}
                 </button>
+                <Link href={`/home-pages/unique-prices/${item.id}`}>
+                <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
+                  Buy Now
+                </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
