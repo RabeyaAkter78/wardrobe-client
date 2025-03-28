@@ -9,6 +9,7 @@ import { AllImages } from "@/assets/AllImages";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { FaCartArrowDown } from "react-icons/fa";
 
 const UniquePrice = () => {
   const data = [
@@ -99,40 +100,39 @@ const UniquePrice = () => {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="border border-gray-300  rounded-lg">
+            <div className="border border-gray-300  rounded-t-">
               <Image
                 src={AllImages.banner}
                 alt={item.name}
                 width={250}
                 height={300}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-t-lg"
               />
               <div className="mt-4 p-2">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-                <p className="text-gray-800 text-sm">
+                <p className="text-gray-600 text-sm h-12">{item.description}</p>
+                {/* <p className="text-gray-800 text-sm">
                   <strong>Size:</strong> {item.size}
                 </p>
                 <p className="text-gray-800 text-sm">
                   <strong>Color:</strong> {item.color}
-                </p>
-                <p className="text-gray-800 text-sm">
+                </p>              <p className="text-gray-800 text-sm">
                   <strong>Condition:</strong> {item.condition}
                 </p>
                 <p className="text-gray-800 text-sm">
                   <strong>Material:</strong> {item.material}
-                </p>
+                </p> */}
                 <p className="text-gray-800 text-sm">
                   <strong>Availability:</strong> {item.availability}
                 </p>
-                <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
-                  Price: {item.price}
-                </button>
-                <Link href={`/home-pages/unique-prices/${item.id}`}>
-                <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
-                  Buy Now
-                </button>
-                </Link>
+                <div className="flex justify-between items-start  gap-2">
+                  <p className="">Price: {item.price}</p>
+                  <Link href={`/home-pages/unique-prices/${item.id}`}>
+                    <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
+                      <FaCartArrowDown />{" "}
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </SwiperSlide>
