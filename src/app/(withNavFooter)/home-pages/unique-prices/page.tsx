@@ -24,7 +24,7 @@ const UniquePrice = () => {
       condition: "Gently Used",
       material: "Cotton",
       availability: "In Stock",
-      image: "/images/floral-dress.jpg",
+      image: AllImages.dress1,
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const UniquePrice = () => {
       condition: "Like New",
       material: "Satin & Lace",
       availability: "In Stock",
-      image: "/images/party-dress.jpg",
+      image: AllImages.dress2,
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ const UniquePrice = () => {
       condition: "Good",
       material: "Denim",
       availability: "Out of Stock",
-      image: "/images/denim-dress.jpg",
+      image: AllImages.dress3,
     },
     {
       id: 4,
@@ -61,7 +61,7 @@ const UniquePrice = () => {
       condition: "Excellent",
       material: "Tulle & Satin",
       availability: "In Stock",
-      image: "/images/princess-gown.jpg",
+      image: AllImages.dress4,
     },
     {
       id: 5,
@@ -73,7 +73,7 @@ const UniquePrice = () => {
       condition: "Gently Used",
       material: "100% Cotton",
       availability: "In Stock",
-      image: "/images/casual-dress.jpg",
+      image: AllImages.dress5,
     },
     {
       id: 6,
@@ -85,7 +85,7 @@ const UniquePrice = () => {
       condition: "Like New",
       material: "Wool",
       availability: "In Stock",
-      image: "/images/winter-dress.jpg",
+      image: AllImages.dress6,
     },
   ];
 
@@ -96,17 +96,17 @@ const UniquePrice = () => {
         spaceBetween={30}
         pagination={{ clickable: true }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper "
       >
         {data.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} className="">
             <div className="border border-gray-300  rounded-t-">
               <Image
-                src={AllImages.banner}
+                src={item.image}
                 alt={item.name}
                 width={250}
                 height={300}
-                className="w-full h-auto rounded-t-lg"
+                className="w-full rounded-t-lg h-96"
               />
               <div className="mt-4 p-2">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
@@ -137,6 +137,7 @@ const UniquePrice = () => {
             </div>
           </SwiperSlide>
         ))}
+        <div className=" !pt-[50px]" />
       </Swiper>
     </div>
   );
