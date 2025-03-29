@@ -7,6 +7,9 @@ import dress3 from "../assets/71AbUxTfO2L._AC_SL1200_.jpg";
 import dress4 from "../assets/Summer_Floral_Dress_for_Baby_Girl-Non_Brand-2a314-391478.png";
 import dress5 from "../assets/pexels-tima-miroshnichenko-6606240.jpg";
 import dress6 from "../assets/71AbUxTfO2L._AC_SL1200_.jpg";
+import x from "../assets/download.png";
+import insta from "../assets/download (1).png";
+import fb from "../assets/download (2).png";
 
 export const AllImages = {
   logo,
@@ -18,4 +21,7 @@ export const AllImages = {
   dress4,
   dress5,
   dress6,
+  x,
+  insta,
+  fb,
 };
