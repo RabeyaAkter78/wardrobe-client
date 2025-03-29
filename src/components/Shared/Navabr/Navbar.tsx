@@ -179,30 +179,30 @@ const NavBar: React.FC = () => {
             </Link>
           ))}
           {isLogin ? (
-          <div className="flex flex-col justify-center items-center  gap-2">
-          <Link href="/favourites">
-            <CiHeart className="h-5 w-5 cursor-pointer" />
-          </Link>
-          <IoIosNotificationsOutline
-            onClick={showModalForNotification}
-            className="cursor-pointer h-5 w-5"
-          />
-          <Link href="/message">
-            <AiOutlineMessage className="h-5 w-5" />
-          </Link>
-          <Link href="/user-profile-page">
-            <Image
-              src={AllImages.logo}
-              alt="user"
-              height={40}
-              width={40}
-              className="h-10 w-10 rounded-full"
-            />
-          </Link>
-          <button onClick={handleLogout} className=" font-bold">
-            Logout
-          </button>
-        </div>
+            <div className="flex flex-col justify-center items-center  gap-2">
+              <Link href="/favourites">
+                <CiHeart className="h-5 w-5 cursor-pointer" />
+              </Link>
+              <IoIosNotificationsOutline
+                onClick={showModalForNotification}
+                className="cursor-pointer h-5 w-5"
+              />
+              <Link href="/message">
+                <AiOutlineMessage className="h-5 w-5" />
+              </Link>
+              <Link href="/user-profile-page">
+                <Image
+                  src={AllImages.logo}
+                  alt="user"
+                  height={40}
+                  width={40}
+                  className="h-10 w-10 rounded-full"
+                />
+              </Link>
+              <button onClick={handleLogout} className=" font-bold">
+                Logout
+              </button>
+            </div>
           ) : (
             <>
               <button
@@ -224,12 +224,12 @@ const NavBar: React.FC = () => {
       <Modal
         open={isModalOpenForNotification}
         onOk={handleOkForNotification}
-        onCancel={handleCancelForNotification} 
+        onCancel={handleCancelForNotification}
         footer={null}
       >
         <NotificationModal
-          // handleCancel={handleCancelForNotification}
-          // handleOk={handleOkForNotification}
+        // handleCancel={handleCancelForNotification}
+        // handleOk={handleOkForNotification}
         />
       </Modal>
     </nav>
