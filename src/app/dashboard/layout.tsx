@@ -94,7 +94,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
                       </span>
                     </div>
                   </Link>
-                  <Link href="/admin-profile">
+                  <Link href="dashboard/admin-profile">
                     <Image
                       src={AllImages.user}
                       alt="AllImages.user"
@@ -104,7 +104,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
                 </div>
               ) : (
                 <div className="w-full flex justify-between items-center">
-                  <Link href="/admin-profile">
+                  <Link href="dashboard/admin-profile">
                     <div className="flex justify-center items-center gap-2">
                       <Image
                         src={AllImages.user}
