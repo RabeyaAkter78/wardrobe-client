@@ -57,12 +57,12 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
         ) : (
           <div className="pt-5 px-4 bg-white w-[300px] h-screen">
             <div className="h-14 text-primary flex flex-col items-center justify-center">
-              <Image
+              {/* <Image
                 src={AllImages.logo}
                 alt="brandlogo"
                 className="h-12 w-12"
-              />
-              <h1 className="text-2xl font-bold">Steady Hands</h1>
+              /> */}
+              <h1 className="text-2xl font-bold">Waredrobe</h1>
             </div>
             <Sidebar
               closeDrawer={function (): void {
@@ -72,7 +72,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
           </div>
         )}
 
-        <div className={`flex-1 bg-[#f3f4f6] ${isMobile ? "p-4" : "p-0"}`}>
+        <div className={`flex-1 bg-[#f3f4f6] ${isMobile ? "p-4" : "px-2 py-3"}`}>
           <div className="bg-[#f3f4f6] h-16">
             <div className="h-20 flex justify-between items-center px-2 gap-2">
               {isMobile ? (
@@ -109,7 +109,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
                       <Image
                         src={AllImages.user}
                         alt="AllImages.user"
-                        className="h-12 w-12 rounded-full"
+                        className="h-10 w-10 rounded-full"
                       />
                       <div>
                         <p className="text-sm text-primary">Welcome</p>
