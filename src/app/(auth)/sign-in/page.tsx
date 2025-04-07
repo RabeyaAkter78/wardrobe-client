@@ -60,7 +60,7 @@ const SignIn = () => {
               </Checkbox>
             </Form.Item>
             <p className=" ">
-              <Link href="/auth/forget-password">Forgot Password</Link>
+              <Link href="/forgate-password">Forgot Password</Link>
             </p>
           </div>
         </Form.Item>

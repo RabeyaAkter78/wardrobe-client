@@ -17,12 +17,14 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.5.0",
+    "react-otp-input": "^3.1.1",
     "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-otp-input": "^2.0.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
