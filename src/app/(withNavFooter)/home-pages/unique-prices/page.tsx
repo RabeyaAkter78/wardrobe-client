@@ -9,7 +9,10 @@ import { AllImages } from "@/assets/AllImages";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import { FaCartArrowDown } from "react-icons/fa";
+
+
+import { CiHeart } from "react-icons/ci";
+import SectionTitle from "@/components/Shared/SectionTitle/SectionTitle";
 
 const UniquePrice = () => {
   const data = [
@@ -91,8 +94,22 @@ const UniquePrice = () => {
 
   return (
     <div className="container mx-auto md:my-20">
+      <SectionTitle title="Unique Prices" subtitle="Discover our unique prices"/>
       <Swiper
-        slidesPerView={3}
+        breakpoints={{
+          0:{
+            slidesPerView: 1,
+          },
+          640:{
+            slidesPerView: 2,
+          },
+          768:{
+            slidesPerView: 3,
+          },
+          1440:{
+            slidesPerView: 3,
+          }
+        }}
         spaceBetween={30}
         pagination={{ clickable: true }}
         modules={[Pagination]}
@@ -100,17 +117,20 @@ const UniquePrice = () => {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id} className="">
-            <div className="border border-gray-300  rounded-t-">
+            <div className="border border-gray-300  rounded-t-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+            <CiHeart className="text-primary absolute top-2 right-2 h-5 w-5 "/>
+              <div className="flex flex-col md:flex-row justify-between items-center  p-2  gap-2">
+          
               <Image
                 src={item.image}
                 alt={item.name}
                 width={250}
                 height={300}
-                className="w-full rounded-t-lg h-96"
+                className="  h-full w-full md:h-96 md:w-52"
               />
-              <div className="mt-4 p-2">
+              <div className="flex flex-col justify-start items-start p-2">
                 <h3 className="text-lg font-semibold">{item.name}</h3>
-                <p className="text-gray-600 text-sm h-12">{item.description}</p>
+                <p className=" text-sm h-12">{item.description}</p>
                 {/* <p className="text-gray-800 text-sm">
                   <strong>Size:</strong> {item.size}
                 </p>
@@ -122,18 +142,20 @@ const UniquePrice = () => {
                 <p className="text-gray-800 text-sm">
                   <strong>Material:</strong> {item.material}
                 </p> */}
-                <p className="text-gray-800 text-sm">
+                <p className=" text-sm">
                   <strong>Availability:</strong> {item.availability}
                 </p>
-                <div className="flex justify-between items-start  gap-2">
-                  <p className="">Price: {item.price}</p>
+                <p className="">Price: {item.price}</p>
+                <div className="flex justify-between items-center  gap-2">
+               
                   <Link href={`/home-pages/unique-prices/${item.id}`}>
                     <button className="mt-2 px-4 py-2 bg-primary text-white rounded-lg">
-                      <FaCartArrowDown />{" "}
+                 See Details
                     </button>
                   </Link>
                 </div>
               </div>
+            </div>
             </div>
           </SwiperSlide>
         ))}
