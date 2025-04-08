@@ -1,6 +1,7 @@
 import Analytics from "@/components/DashboardComponents/Sidebar/DashboardPageComponents/Analytics";
 import EarningHistory from "@/components/DashboardComponents/Sidebar/DashboardPageComponents/EarningHistory";
 import SpentHistory from "@/components/DashboardComponents/Sidebar/DashboardPageComponents/SpentHistory";
+import WishlistHistory from "@/components/DashboardComponents/Sidebar/DashboardPageComponents/WishlistHistory";
 import React from "react";
 
 const DashboardPage = () => {
@@ -11,6 +12,7 @@ const DashboardPage = () => {
         <EarningHistory/>
         <SpentHistory/>
       </div>
+      <WishlistHistory/>
     </div>
   );
 };
