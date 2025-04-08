@@ -1,9 +1,10 @@
+import SectionTitle from '@/components/Shared/SectionTitle/SectionTitle';
 import React from 'react';
 
 const PopularItems = () => {
     return (
-        <div>
-            <h1>Popular Items</h1>
+        <div className='container mx-auto my-20'>
+        <SectionTitle title={'Popular Items'} subtitle={'Check Out Our Most Popular Items'}/>
         </div>
     );
 };

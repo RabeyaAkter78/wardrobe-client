@@ -1,9 +1,10 @@
+import SectionTitle from '@/components/Shared/SectionTitle/SectionTitle';
 import React from 'react';
 
 const BusinessSales = () => {
     return (
-        <div>
-            <h1>Business Sales for corporate</h1>
+        <div className='container mx-auto my-20'>
+       <SectionTitle title={'Business Sales'} subtitle={'Check Out Our Business Sales'}/>
         </div>
     );
 };
