@@ -9,6 +9,8 @@ import { FaBook, FaUser, FaMoneyCheckAlt, FaEdit } from "react-icons/fa";
 import { BiChevronDown } from "react-icons/bi";
 import { MdDashboard, MdPolicy } from "react-icons/md";
 import { GrAnalytics } from "react-icons/gr";
+import { FcSalesPerformance } from "react-icons/fc";
+import { GoChecklist } from "react-icons/go";
 
 interface SidebarProps {
   closeDrawer: () => void;
@@ -44,46 +46,22 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
 
   const menuItems: MenuItem[] = [
     {
-      icon: <MdDashboard className="h-5 w-5 text-primary" />,
+      icon: <MdDashboard className="h-5 w-5 " />,
       label: "Dashboard",
       link: "/",
     },
+  
     {
-      icon: <FaBook className="h-5 w-5 text-primary" />,
-      label: "Order & Booking",
-      isDropdown: true,
-      subItems: [
-        { label: "Scheduled", link: "/scheduled" },
-        { label: "Completed", link: "/completed" },
-      ],
+      icon: <GoChecklist className="h-5 w-5 " />,
+      label: "Manage Listing",
+      link: "/manage_listing",
     },
     {
-      icon: <FaMoneyCheckAlt className="h-5 w-5 text-primary" />,
-      label: "Payments",
-      link: "/payments",
+      icon: <FcSalesPerformance className="h-5 w-5 " />,
+      label: "Track Sales",
+      link: "/track_sales",
     },
-    {
-      icon: <FaUser className="h-5 w-5 text-primary" />,
-      label: "User Management",
-      isDropdown: true,
-      subItems: [
-        {
-          icon: <FaEdit className="h-5 w-5 text-primary" />,
-          label: "User Profile",
-          link: "/user-profile",
-        },
-        {
-          icon: <MdPolicy className="h-5 w-5 text-primary" />,
-          label: "Artist Profile",
-          link: "/artist-profile",
-        },
-        {
-          icon: <GrAnalytics className="h-5 w-5 text-primary" />,
-          label: "Business Profile",
-          link: "/business-profile",
-        },
-      ],
-    },
+   
   ];
 
   return (
@@ -95,8 +73,8 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
               <div
                 className={`w-72 flex justify-between items-center px-5 py-2 cursor-pointer  ${
                   active === item.label
-                    ? "bg-black text-primary font-semibold"
-                    : "bg-white text-black font-semibold"
+                    ? "bg-primary text-white font-semibold"
+                    : "bg-white text-black font-semibold hover:bg-primary hover:text-white"
                 }`}
                 onClick={() =>
                   item.isDropdown
@@ -106,13 +84,13 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
               >
                 {item.link ? (
                   <Link href={item.link}>
-                    <div className="flex items-center gap-3">
+                    <div className="flex justify-between items-center gap-3">
                       {item.icon}
                       <p>{item.label}</p>
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-between gap-3">
                     {item.icon}
                     <p>{item.label}</p>
                     {item.isDropdown && (

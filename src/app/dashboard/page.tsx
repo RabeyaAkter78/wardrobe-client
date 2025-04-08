@@ -1,9 +1,10 @@
+import Analytics from "@/components/DashboardComponents/Sidebar/DashboardPageComponents/Analytics";
 import React from "react";
 
 const DashboardPage = () => {
   return (
     <div>
-      <h1>dashboard page</h1>
+      <Analytics />
     </div>
   );
 };
