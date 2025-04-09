@@ -344,7 +344,7 @@ const ListedProducts = () => {
       </div>
 
       <Modal
-        title="Product Details"
+        title="Update Product"
         open={isModalOpen}
         footer={null}
         onCancel={() => setIsModalOpen(false)}
