@@ -62,7 +62,8 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
                 alt="brandlogo"
                 className="h-12 w-12"
               /> */}
-              <h1 className="text-2xl font-bold">Waredrobe</h1>
+              <p className="">Welcome to your</p>
+              <h1 className="text-3xl font-bold">Waredrobe</h1>
             </div>
             <Sidebar
               closeDrawer={function (): void {
@@ -72,7 +73,9 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({
           </div>
         )}
 
-        <div className={`flex-1 bg-[#f3f4f6] ${isMobile ? "p-4" : "px-2 py-3"}`}>
+        <div
+          className={`flex-1 bg-[#f3f4f6] ${isMobile ? "p-4" : "px-2 py-3"}`}
+        >
           <div className="bg-[#f3f4f6] h-16">
             <div className="h-20 flex justify-between items-center px-2 gap-2">
               {isMobile ? (

@@ -48,18 +48,18 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
     {
       icon: <MdDashboard className="h-5 w-5 " />,
       label: "Dashboard",
-      link: "/",
+      // link: "/",
     },
   
     {
       icon: <GoChecklist className="h-5 w-5 " />,
       label: "Manage Listing",
-      link: "/manage_listing",
+      link: "/dashboard/manage-listing",
     },
     {
       icon: <FcSalesPerformance className="h-5 w-5 " />,
       label: "Track Sales",
-      link: "/track_sales",
+      link: "/dashboard/track-sales",
     },
    
   ];
@@ -71,7 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
           {menuItems.map((item) => (
             <div key={item.label}>
               <div
-                className={`w-72 flex justify-between items-center px-5 py-2 cursor-pointer  ${
+                className={`w-96 flex justify-between items-center px-5 py-2 cursor-pointer  ${
                   active === item.label
                     ? "bg-primary text-white font-semibold"
                     : "bg-white text-black font-semibold hover:bg-primary hover:text-white"
@@ -117,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
                         handleSubItemClick(subItem.label, subItem.link)
                       }
                     >
-                      <p className="flex items-center gap-2 ml-10">
+                      <p className="flex items-center justify-between gap-2 ml-10">
                         {subItem.icon}
                         {subItem.label}
                       </p>
@@ -129,7 +129,7 @@ const Sidebar: React.FC<SidebarProps> = ({ closeDrawer }) => {
           ))}
           <div
             className="bg-primary w-72 md:mt-20 py-3 flex justify-center items-center cursor-pointer hover:bg-primary text-white"
-            onClick={() => console.log("Logged out")}
+            onClick={() => router.push("/")}
           >
             <FiLogOut className="text-xl" />
             <p className="ml-2">Log out</p>
